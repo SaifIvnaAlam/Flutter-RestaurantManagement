@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
-import 'package:restaurantmanagement/main.dart';
 
 class SideBarWrapper extends StatelessWidget {
   const SideBarWrapper({
@@ -92,3 +91,5 @@ class SideBarWrapper extends StatelessWidget {
     );
   }
 }
+
+final divider = Divider(color: Colors.white.withOpacity(0.3), height: 1);
