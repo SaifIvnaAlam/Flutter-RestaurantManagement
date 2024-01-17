@@ -8,6 +8,10 @@ class OrderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
       body: ListView.builder(
         itemCount: demoOrderData.length,
         itemBuilder: (BuildContext context, int index) {

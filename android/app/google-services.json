@@ -12,7 +12,20 @@
           "package_name": "com.restaurantmanagement.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1095708303270-lpd4c31boaf1rktjllopa4qb5bm1nkbu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.restaurantmanagement.app",
+            "certificate_hash": "89a0d9016e7d4f37b3823e9f3526b8a10ba35f8d"
+          }
+        },
+        {
+          "client_id": "1095708303270-bldg5k5f9q2b9sr7a3nkrvhs2r9mkhrb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBtcA6WFk60dtWXio3DLpOtQrBCRtkSuQI"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095708303270-bldg5k5f9q2b9sr7a3nkrvhs2r9mkhrb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
