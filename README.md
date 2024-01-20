@@ -1,16 +1,52 @@
-# restaurantmanagement
+<h1 style="color: orange;">🍊Project: Orange App </h1>
 
-A new Flutter project.
+Orange is a powerful and free Restaurant Management tool designed to streamline and enhance your restaurant operations. With user-friendly features and a robust set of tools, Orange empowers restaurant owners and staff to efficiently manage orders, inventory, and overall business processes
 
-## Getting Started
+## Project Folder Structure
 
-This project is a starting point for a Flutter application.
+```C++
+ 📁 Lib(Main)
+  📁 Src
+   📁 auth(App Authentication Handle)
+   📁 constants(Global helper functions/widgets/utils)
+   📁 features(Holds each features of the total app)
+   📁 routes (Routing Configure)
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Routing
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+All the routing configuration is happening in the file:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+go_router_config.dart
+//and
+go_router_constants.dart
+```
+
+To add a new route
+
+1. Create a Named route in the file:
+
+```js
+go_router_constants.dart;
+```
+
+Example :
+
+```js
+  static const EXAMPLE_PAGE = '/examplePage';
+```
+
+Note: Make sure to Make the variable name all capital letters
+
+2.Add the route to the file: `go_router_config.dart` inside the router
+
+Example:
+
+```js
+   GoRoute(
+      name: NamedRoute.EXAMPLE,
+      path: '/examplePage',
+      builder: (context, state) => const Example(),
+    ),
+```
