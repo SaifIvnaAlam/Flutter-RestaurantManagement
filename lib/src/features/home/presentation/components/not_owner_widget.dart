@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../../core/show_error.dart';
-import '../../../../constants/utils/app_colors.dart';
-import '../../../../constants/utils/app_spacing.dart';
-import '../../../../constants/utils/app_font_style.dart';
 
-class NotOwnerWidget extends StatelessWidget {
-  const NotOwnerWidget({
+import '../../../../constants/utils/app_colors.dart';
+import '../../../../constants/utils/app_font_style.dart';
+import '../../../../constants/utils/app_spacing.dart';
+import '../../../../core/show_error.dart';
+
+class CreateResturantPage extends StatelessWidget {
+  const CreateResturantPage({
     super.key,
   });
 
