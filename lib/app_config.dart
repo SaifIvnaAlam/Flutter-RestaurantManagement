@@ -1,12 +1,9 @@
+import 'src/core/app.dart';
 import 'package:flutter/material.dart';
+import 'tests/app_tests/test_app.dart';
 import 'package:restaurantmanagement/src/core/show_error.dart';
 
-import 'src/core/app.dart';
-import 'tests/app_tests/test_app.dart';
-
 // ignore_for_file: prefer_final_fields
-
-// ignore_for_file: constant_identifier_names
 
 // ignore_for_file: unnecessary_cast
 
