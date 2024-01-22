@@ -37,9 +37,7 @@ Example :
   static const EXAMPLE_PAGE = '/examplePage';
 ```
 
-Note: Make sure to Make the variable name all capital letters
-
-2.Add the route to the file: `go_router_config.dart` inside the router
+Note: Make sure to Make the variable name all capital letters. Add the route to the file: `go_router_config.dart` inside the router
 
 Example:
 
@@ -50,3 +48,13 @@ Example:
       builder: (context, state) => const Example(),
     ),
 ```
+
+## Tests
+
+Change the global variable `isTesting` to true in the file: `main.dart` which will run the test version of the application.
+
+`Function_test_screen.dart`: Is to test the response of functions
+
+## log
+
+To log any message to the console, use the factory functions of `Klog` class in `show_error.dart`
