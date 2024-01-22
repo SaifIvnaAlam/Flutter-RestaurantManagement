@@ -1,44 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:restaurantmanagement/src/constants/utils/app_colors.dart';
-import 'package:restaurantmanagement/src/features/home/presentation/components/home_page_containers.dart';
-import 'package:restaurantmanagement/src/routes/go_router_constants.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:restaurantmanagement/src/features/home/application/cubit/restaurant_owner_cubit.dart';
+import 'package:restaurantmanagement/src/features/home/presentation/components/owner_widget.dart';
+
+import '../components/not_owner_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    context.read<RestaurantOwnerCubit>().checkIfUserIsRestaurantOwner();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.lightOrange,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            HomepageContainer(
-                name: 'Create Resturant',
-                ontap: () {
-                  context.push(NamedRoute.CREATE_RESTURANT);
-                }),
-            HomepageContainer(
-                name: 'DashBoard',
-                ontap: () {
-                  context.push(NamedRoute.DASHBOARD_PAGE);
-                }),
-            HomepageContainer(
-                name: 'Create Product',
-                ontap: () {
-                  context.push(NamedRoute.CREATE_ITEM_PAGE);
-                }),
-            HomepageContainer(
-                name: 'Create Order',
-                ontap: () {
-                  context.push(NamedRoute.ORDER_PAGE);
-                }),
-          ],
-        ),
+      body: BlocBuilder<RestaurantOwnerCubit, RestaurantOwnerState>(
+        builder: (context, state) {
+          return state.map(
+            loading: (value) => const Center(
+              child: CircularProgressIndicator.adaptive(),
+            ),
+            notOwner: (value) => const NotOwnerWidget(),
+            owner: ((value) {
+              return const RestaurantOwnerWidget();
+            }),
+          );
+        },
       ),
     );
   }

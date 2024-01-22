@@ -29,11 +29,11 @@ class SignInPage extends StatelessWidget {
               children: [
                 Text(
                   "Orange",
-                  style: h1Style.copyWith(color: Colors.orange),
+                  style: KFontStyle.h1Style.copyWith(color: Colors.orange),
                 ),
                 Text(
                   "Orange is a powerful and free Restaurant Management tool designed to streamline and enhance your restaurant operations. With user-friendly features and a robust set of tools, Orange empowers restaurant owners and staff to efficiently manage orders, inventory, and overall business processes",
-                  style: body1.copyWith(
+                  style: KFontStyle.body1.copyWith(
                     color: Colors.grey,
                   ),
                   textAlign: TextAlign.center,
@@ -58,7 +58,8 @@ class SignInPage extends StatelessWidget {
                     },
                     child: Text(
                       'Log in with Google',
-                      style: body1.copyWith(fontWeight: FontWeight.bold),
+                      style: KFontStyle.body1
+                          .copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
