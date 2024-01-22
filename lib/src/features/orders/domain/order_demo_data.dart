@@ -1,4 +1,4 @@
-import '../../create_item/domain/item_model.dart';
+import '../../products/domain/item_model.dart';
 import 'package:restaurantmanagement/src/features/orders/domain/order_model.dart';
 
 List<OrderModel> demoOrderData = [

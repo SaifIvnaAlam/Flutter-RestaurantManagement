@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurantmanagement/src/features/create_item/domain/list_of_demo_items.dart';
-import 'package:restaurantmanagement/src/features/create_item/application/Item_cubit/item_cubit.dart';
+
+import '../application/Item_cubit/item_cubit.dart';
+import '../domain/list_of_demo_items.dart';
 
 class CreateItemPage extends StatelessWidget {
   const CreateItemPage({super.key});

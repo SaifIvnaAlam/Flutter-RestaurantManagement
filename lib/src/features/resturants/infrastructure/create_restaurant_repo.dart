@@ -1,7 +1,7 @@
 import 'dart:developer';
+import '../domain/entities/restaurant_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:restaurantmanagement/src/features/create_resturant/domain/entities/restaurant_model.dart';
-import 'package:restaurantmanagement/src/features/create_resturant/domain/interface/i_create_restaurant_repo.dart';
+import '../domain/interface/i_create_restaurant_repo.dart';
 
 class CreateRestaurantRepo implements ICreateRestaurantRepo {
   @override

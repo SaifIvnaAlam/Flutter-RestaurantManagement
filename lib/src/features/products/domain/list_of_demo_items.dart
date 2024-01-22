@@ -1,4 +1,4 @@
-import 'package:restaurantmanagement/src/features/create_item/domain/item_model.dart';
+import 'item_model.dart';
 
 List<ItemModel> demoData = [
   ItemModel(

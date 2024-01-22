@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:restaurantmanagement/src/features/create_item/domain/item_model.dart';
+import '../../products/domain/item_model.dart';
 
 class OrderModel {
   String id;

@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:uuid/uuid.dart';
+import '../../domain/item_model.dart';
+import '../../domain/interface/i_Item_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:restaurantmanagement/src/features/create_item/domain/item_model.dart';
-import 'package:restaurantmanagement/src/features/create_item/domain/interface/i_Item_repo.dart';
 
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 

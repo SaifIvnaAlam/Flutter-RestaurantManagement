@@ -1,28 +1,35 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurantmanagement/src/routes/go_router_constants.dart';
-import 'package:restaurantmanagement/src/auth/application/auth_cubit/auth_cubit.dart';
+import 'package:restaurantmanagement/src/auth/presentation/sign_in.dart';
+import 'package:restaurantmanagement/src/features/home/presentation/page/home_page.dart';
+// ignore_for_file: use_key_in_widget_constructors
 
-class SplashPage extends StatelessWidget {
-  const SplashPage({super.key});
+// ignore_for_file: library_private_types_in_public_api
 
+class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthCubit, AuthState>(
-      listener: (context, state) {
-        state.map(
-          initial: (_) {},
-          authenticated: (state) {
-            context.goNamed(NamedRoute.HOME_PAGE);
-          },
-          unAuthenticated: (_) => context.goNamed(NamedRoute.SIGNIN_PAGE),
+    return FutureBuilder<User?>(
+      future: FirebaseAuth.instance.authStateChanges().first,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          if (snapshot.data != null) {
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (context) => const HomePage(),
+            ));
+          } else {
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (context) => const SignInPage(),
+            ));
+          }
+        }
+
+        return const Scaffold(
+          body: Center(
+            child: CircularProgressIndicator.adaptive(),
+          ),
         );
       },
-      child: const Scaffold(
-          body: Center(
-        child: CircularProgressIndicator.adaptive(),
-      )),
     );
   }
 }

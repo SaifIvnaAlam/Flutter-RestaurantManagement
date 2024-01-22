@@ -1,11 +1,11 @@
 import 'dart:io';
-
 import 'package:bloc/bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:restaurantmanagement/src/core/show_error.dart';
-import 'package:restaurantmanagement/src/features/create_resturant/domain/entities/restaurant_model.dart';
-import 'package:restaurantmanagement/src/features/create_resturant/domain/interface/i_create_restaurant_repo.dart';
 import 'package:uuid/uuid.dart';
+import '../../domain/entities/restaurant_model.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../domain/interface/i_create_restaurant_repo.dart';
+import 'package:restaurantmanagement/src/core/show_error.dart';
+// ignore_for_file: prefer_final_fields, no_leading_underscores_for_local_identifiers
 
 part 'create_restaurant_cubit.freezed.dart';
 part 'create_restaurant_state.dart';
@@ -17,8 +17,8 @@ class CreateRestaurantCubit extends Cubit<CreateRestaurantState> {
 
   Future<void> createRestaurant(String name, File image) async {
     final _restaurant = RestaurantsModel(
-        id: Uuid().v4(),
-        restaurantId: name + Uuid().v4(),
+        id: const Uuid().v4(),
+        restaurantId: name + const Uuid().v4(),
         image: "Path",
         createAt: "",
         admin: "",
@@ -27,7 +27,7 @@ class CreateRestaurantCubit extends Cubit<CreateRestaurantState> {
 
     if (result) {
       emit(
-        CreateRestaurantState.success(),
+        const CreateRestaurantState.success(),
       );
     } else {
       emit(

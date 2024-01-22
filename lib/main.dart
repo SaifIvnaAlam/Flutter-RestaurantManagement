@@ -4,5 +4,5 @@ import 'package:restaurantmanagement/src/core/bootstap.dart';
 
 Future<void> main() async {
   await BootStrap().init();
-  runApp(App());
+  runApp(const App());
 }
