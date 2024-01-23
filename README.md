@@ -58,3 +58,29 @@ Change the global variable `isTesting` to true in the file: `main.dart` which wi
 ## log
 
 To log any message to the console, use the factory functions of `Klog` class in `show_error.dart`
+
+## Creating a new Feature with Mason
+
+- install Mason cli
+
+```js
+  dart pub global activate mason_cli
+```
+
+- install Mason
+
+```js
+  dart pub global activate mason
+```
+
+[More info](https://pub.dev/packages/mason_cli)
+
+- Creating new feature
+
+```js
+mason make feature
+```
+
+**NOTE**
+
+This will create the basic folder structure of the feature inside the features folder.
