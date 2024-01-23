@@ -1,10 +1,14 @@
 import 'dart:io';
+
 import 'package:bloc/bloc.dart';
-import 'package:uuid/uuid.dart';
-import '../../domain/entities/restaurant_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../domain/interface/i_create_restaurant_repo.dart';
 import 'package:restaurantmanagement/src/core/show_error.dart';
+import 'package:uuid/uuid.dart';
+
+import '../../domain/entities/restaurant_model.dart';
+import '../../domain/interface/i_create_restaurant_repo.dart';
+
 // ignore_for_file: prefer_final_fields, no_leading_underscores_for_local_identifiers
 
 part 'create_restaurant_cubit.freezed.dart';
@@ -17,13 +21,12 @@ class CreateRestaurantCubit extends Cubit<CreateRestaurantState> {
 
   Future<void> createRestaurant(String name, File image) async {
     final _restaurant = RestaurantsModel(
-        id: const Uuid().v4(),
-        restaurantId: name + const Uuid().v4(),
-        image: "Path",
-        createAt: "",
-        admin: "",
-        members: []);
-    var result = await _repo.createResturant(_restaurant);
+      id: const Uuid().v4(),
+      image: "Path",
+      createAt: FieldValue.serverTimestamp().toString(),
+      admin: "",
+    );
+    var result = await _repo.createResturant(_restaurant, image);
 
     if (result) {
       emit(
