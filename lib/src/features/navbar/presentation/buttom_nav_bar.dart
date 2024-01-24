@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:restaurantmanagement/src/features/dashboard/presentation/dashboard_page.dart';
 import 'package:restaurantmanagement/src/features/orders/presentation/order_page.dart';
-import 'package:restaurantmanagement/src/features/products/presentation/create_item_page.dart';
 import 'package:restaurantmanagement/src/features/profile/presentation/profile_page.dart';
+import 'package:restaurantmanagement/src/features/dashboard/presentation/dashboard_page.dart';
+import 'package:restaurantmanagement/src/features/products/presentation/pages/create_product_page.dart';
 // ignore_for_file: unused_field
 
 class NavBar extends StatefulWidget {

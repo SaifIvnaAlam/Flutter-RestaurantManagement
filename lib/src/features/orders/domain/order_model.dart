@@ -1,6 +1,8 @@
 import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
-import '../../products/domain/item_model.dart';
+
+import '../../products/domain/product_model.dart';
 
 class OrderModel {
   String id;
@@ -9,7 +11,7 @@ class OrderModel {
   String totalPrice;
   int? tableNo;
 
-  List<ItemModel> itemsOrdered;
+  List<ProductModel> itemsOrdered;
   OrderModel({
     required this.id,
     required this.orderBy,
@@ -25,7 +27,7 @@ class OrderModel {
     String? orderDate,
     String? totalPrice,
     int? tableNo,
-    List<ItemModel>? itemsOrdered,
+    List<ProductModel>? itemsOrdered,
   }) {
     return OrderModel(
       id: id ?? this.id,
@@ -39,7 +41,6 @@ class OrderModel {
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
-
     result.addAll({'id': id});
     result.addAll({'orderBy': orderBy});
     result.addAll({'orderDate': orderDate});
@@ -60,8 +61,8 @@ class OrderModel {
       orderDate: map['orderDate'] ?? '',
       totalPrice: map['totalPrice'] ?? '',
       tableNo: map['tableNo']?.toInt(),
-      itemsOrdered: List<ItemModel>.from(
-          map['itemsOrdered']?.map((x) => ItemModel.fromMap(x))),
+      itemsOrdered: List<ProductModel>.from(
+          map['itemsOrdered']?.map((x) => ProductModel.fromMap(x))),
     );
   }
 

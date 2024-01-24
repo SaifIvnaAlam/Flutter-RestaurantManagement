@@ -1,5 +1,6 @@
-import '../../products/domain/item_model.dart';
 import 'package:restaurantmanagement/src/features/orders/domain/order_model.dart';
+
+import '../../products/domain/product_model.dart';
 
 List<OrderModel> demoOrderData = [
   OrderModel(
@@ -9,14 +10,14 @@ List<OrderModel> demoOrderData = [
     totalPrice: "50.00",
     tableNo: 1,
     itemsOrdered: [
-      ItemModel(
+      ProductModel(
         id: "101",
         name: "Product A",
         price: 20.00,
         description: "Description for Product A",
         image: "image_a.jpg",
       ),
-      ItemModel(
+      ProductModel(
         id: "102",
         name: "Product B",
         price: 10.00,
@@ -32,14 +33,14 @@ List<OrderModel> demoOrderData = [
     totalPrice: "75.00",
     tableNo: 2,
     itemsOrdered: [
-      ItemModel(
+      ProductModel(
         id: "201",
         name: "Product C",
         price: 30.00,
         description: "Description for Product C",
         image: "image_c.jpg",
       ),
-      ItemModel(
+      ProductModel(
         id: "202",
         name: "Product D",
         price: 15.00,
@@ -55,14 +56,14 @@ List<OrderModel> demoOrderData = [
     totalPrice: "50.00",
     tableNo: 1,
     itemsOrdered: [
-      ItemModel(
+      ProductModel(
         id: "101",
         name: "Product A",
         price: 20.00,
         description: "Description for Product A",
         image: "image_a.jpg",
       ),
-      ItemModel(
+      ProductModel(
         id: "102",
         name: "Product B",
         price: 10.00,
@@ -78,14 +79,14 @@ List<OrderModel> demoOrderData = [
     totalPrice: "50.00",
     tableNo: 1,
     itemsOrdered: [
-      ItemModel(
+      ProductModel(
         id: "101",
         name: "Product A",
         price: 20.00,
         description: "Description for Product A",
         image: "image_a.jpg",
       ),
-      ItemModel(
+      ProductModel(
         id: "102",
         name: "Product B",
         price: 10.00,
@@ -101,14 +102,14 @@ List<OrderModel> demoOrderData = [
     totalPrice: "50.00",
     tableNo: 1,
     itemsOrdered: [
-      ItemModel(
+      ProductModel(
         id: "101",
         name: "Product A",
         price: 20.00,
         description: "Description for Product A",
         image: "image_a.jpg",
       ),
-      ItemModel(
+      ProductModel(
         id: "102",
         name: "Product B",
         price: 10.00,
@@ -124,14 +125,14 @@ List<OrderModel> demoOrderData = [
     totalPrice: "50.00",
     tableNo: 1,
     itemsOrdered: [
-      ItemModel(
+      ProductModel(
         id: "101",
         name: "Product A",
         price: 20.00,
         description: "Description for Product A",
         image: "image_a.jpg",
       ),
-      ItemModel(
+      ProductModel(
         id: "102",
         name: "Product B",
         price: 10.00,
@@ -147,14 +148,14 @@ List<OrderModel> demoOrderData = [
     totalPrice: "50.00",
     tableNo: 1,
     itemsOrdered: [
-      ItemModel(
+      ProductModel(
         id: "101",
         name: "Product A",
         price: 20.00,
         description: "Description for Product A",
         image: "image_a.jpg",
       ),
-      ItemModel(
+      ProductModel(
         id: "102",
         name: "Product B",
         price: 10.00,

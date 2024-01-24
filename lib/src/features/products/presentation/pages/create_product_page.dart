@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import '../domain/list_of_demo_items.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../application/Item_cubit/item_cubit.dart';
-
+import '../../application/Item_cubit/item_cubit.dart';
 
 class CreateProducPage extends StatelessWidget {
   const CreateProducPage({super.key});
@@ -10,18 +8,8 @@ class CreateProducPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: demoData.length,
-        itemBuilder: (context, index) {
-          return Card(
-            child: ListTile(
-              title: Text(demoData[index].name),
-              subtitle: Text(
-                demoData[index].price.toString(),
-              ),
-            ),
-          );
-        },
+      body: const Center(
+        child: Text("Create Product Pages"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

@@ -1,8 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:uuid/uuid.dart';
-import '../../domain/item_model.dart';
-import '../../domain/interface/i_Item_repo.dart';
+import '../../domain/product_model.dart';
+import '../../domain/interface/i_product_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
@@ -14,7 +15,7 @@ class ItemCubit extends Cubit<ItemState> {
   final IItemRepo _iItemRepo;
 
   Future<void> createNewItem(String name, double price) async {
-    final _item = ItemModel(
+    final _item = ProductModel(
       id: const Uuid().v4(),
       name: name,
       price: price,

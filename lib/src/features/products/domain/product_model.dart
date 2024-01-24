@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-class ItemModel {
+class ProductModel {
   String id;
   String name;
   double price;
   String description;
   String image;
-  ItemModel({
+  ProductModel({
     required this.id,
     required this.name,
     required this.price,
@@ -14,14 +14,14 @@ class ItemModel {
     required this.image,
   });
 
-  ItemModel copyWith({
+  ProductModel copyWith({
     String? id,
     String? name,
     double? price,
     String? description,
     String? image,
   }) {
-    return ItemModel(
+    return ProductModel(
       id: id ?? this.id,
       name: name ?? this.name,
       price: price ?? this.price,
@@ -42,8 +42,8 @@ class ItemModel {
     return result;
   }
 
-  factory ItemModel.fromMap(Map<String, dynamic> map) {
-    return ItemModel(
+  factory ProductModel.fromMap(Map<String, dynamic> map) {
+    return ProductModel(
       id: map['id'] ?? '',
       name: map['name'] ?? '',
       price: map['price']?.toDouble() ?? 0.0,
@@ -54,19 +54,19 @@ class ItemModel {
 
   String toJson() => json.encode(toMap());
 
-  factory ItemModel.fromJson(String source) =>
-      ItemModel.fromMap(json.decode(source));
+  factory ProductModel.fromJson(String source) =>
+      ProductModel.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'ItemModel(id: $id, name: $name, price: $price, description: $description, image: $image)';
+    return 'ProductModel(id: $id, name: $name, price: $price, description: $description, image: $image)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is ItemModel &&
+    return other is ProductModel &&
         other.id == id &&
         other.name == name &&
         other.price == price &&
