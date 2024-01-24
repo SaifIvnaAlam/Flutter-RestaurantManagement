@@ -1,10 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:restaurantmanagement/src/auth/presentation/sign_in.dart';
-import 'package:restaurantmanagement/src/features/home/presentation/page/home_page.dart';
-// ignore_for_file: use_key_in_widget_constructors
+import 'package:go_router/go_router.dart';
 
-// ignore_for_file: library_private_types_in_public_api
+import '../routes/go_router_constants.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -13,15 +11,13 @@ class SplashScreen extends StatelessWidget {
       future: FirebaseAuth.instance.authStateChanges().first,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.data != null) {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
-              builder: (context) => const HomePage(),
-            ));
-          } else {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
-              builder: (context) => const SignInPage(),
-            ));
-          }
+          Future.microtask(() {
+            if (snapshot.data != null) {
+              context.pushReplacement(NamedRoute.HOME_PAGE);
+            } else {
+              context.pushReplacement(NamedRoute.SIGNIN_PAGE);
+            }
+          });
         }
 
         return const Scaffold(

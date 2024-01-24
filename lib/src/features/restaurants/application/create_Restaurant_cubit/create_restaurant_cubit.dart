@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:restaurantmanagement/src/constants/firebase_helpers/firestore_helper_functions.dart';
 import 'package:restaurantmanagement/src/core/show_error.dart';
 import 'package:uuid/uuid.dart';
 
@@ -19,12 +20,13 @@ class CreateRestaurantCubit extends Cubit<CreateRestaurantState> {
       : super(const CreateRestaurantState.initial());
   ICreateRestaurantRepo _repo;
 
-  Future<void> createRestaurant(String name, File image) async {
+  Future<bool> createRestaurant(String name, File image) async {
+    final _helper = await FirebaseHelperFunctions().getCurrenUser();
     final _restaurant = RestaurantsModel(
       id: const Uuid().v4(),
       image: "Path",
       createAt: FieldValue.serverTimestamp().toString(),
-      admin: "",
+      admin: _helper.email,
     );
     var result = await _repo.createResturant(_restaurant, image);
 
@@ -32,12 +34,14 @@ class CreateRestaurantCubit extends Cubit<CreateRestaurantState> {
       emit(
         const CreateRestaurantState.success(),
       );
+      return true;
     } else {
       emit(
         CreateRestaurantState.error(
           ShowError(title: "Creating Restaurant Faild", statusCode: 500),
         ),
       );
+      return false;
     }
   }
 }

@@ -1,10 +1,15 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
-import '../../../core/show_error.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:restaurantmanagement/src/features/restaurants/application/create_Restaurant_cubit/create_restaurant_cubit.dart';
+
 import '../../../constants/utils/app_colors.dart';
-import '../../../constants/utils/app_spacing.dart';
 import '../../../constants/utils/app_font_style.dart';
+import '../../../constants/utils/app_spacing.dart';
+import '../../../core/show_error.dart';
 
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
@@ -75,8 +80,23 @@ class _CreateResturantPageState extends State<CreateResturantPage> {
             ),
             child: MaterialButton(
               onPressed: () {
-                Klog.logMessage(_nameController.text);
-                Klog.logMessage("Select image is Pressed");
+                if (_nameController.text.isNotEmpty) {
+                  context
+                      .read<CreateRestaurantCubit>()
+                      .createRestaurant(_nameController.text, _selectedImage!)
+                      .then(
+                        (value) => {
+                          if (value)
+                            {context.pop()}
+                          else
+                            {
+                              Klog.logMessage("Error Crearting Restaurant"),
+                            }
+                        },
+                      );
+
+                  context.pop();
+                }
               },
               child: Text(
                 "Create Restaurant",
