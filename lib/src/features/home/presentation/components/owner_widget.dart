@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../routes/go_router_constants.dart';
 import 'package:restaurantmanagement/src/features/home/presentation/components/home_page_containers.dart';
+
+import '../../../../routes/go_router_constants.dart';
 
 class RestaurantOwnerWidget extends StatelessWidget {
   const RestaurantOwnerWidget({
@@ -15,11 +16,6 @@ class RestaurantOwnerWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           HomepageContainer(
-              name: 'Create Resturant',
-              ontap: () {
-                context.push(NamedRoute.CREATE_RESTURANT);
-              }),
-          HomepageContainer(
               name: 'DashBoard',
               ontap: () {
                 context.push(NamedRoute.DASHBOARD_PAGE);
@@ -27,7 +23,7 @@ class RestaurantOwnerWidget extends StatelessWidget {
           HomepageContainer(
               name: 'Create Product',
               ontap: () {
-                context.push(NamedRoute.CREATE_ITEM_PAGE);
+                context.push(NamedRoute.CREATE_PRODUCT_PAGE);
               }),
           HomepageContainer(
               name: 'Create Order',

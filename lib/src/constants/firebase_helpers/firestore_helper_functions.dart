@@ -54,6 +54,17 @@ class FirebaseHelperFunctions {
     return userCollection.doc(_user!.uid).get();
   }
 
+  Future<bool> updateUserDoc(Map<String, dynamic> data) async {
+    var userCollection = await userCollectionHelper();
+    try {
+      userCollection.doc(_user!.uid).update(data);
+      return true;
+    } catch (e) {
+      Klog.logMessage("Error Updating User Doc:  $e");
+      return false;
+    }
+  }
+
 //Upload_Helper
 
   Future<String> uploadRestuarantImageHelper(File image, String path) async {

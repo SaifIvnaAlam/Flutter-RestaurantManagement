@@ -3,6 +3,7 @@ import 'package:restaurantmanagement/src/auth/presentation/sign_in.dart';
 import 'package:restaurantmanagement/src/core/splash.dart';
 import 'package:restaurantmanagement/src/features/dashboard/presentation/dashboard_page.dart';
 import 'package:restaurantmanagement/src/features/home/presentation/page/home_page.dart';
+import 'package:restaurantmanagement/src/features/navbar/presentation/buttom_nav_bar.dart';
 import 'package:restaurantmanagement/src/features/orders/presentation/order_page.dart';
 import 'package:restaurantmanagement/src/routes/go_router_constants.dart';
 
@@ -33,9 +34,9 @@ GoRouter router = GoRouter(
       builder: (context, state) => const DashBoardPage(),
     ),
     GoRoute(
-      name: NamedRoute.CREATE_ITEM_PAGE,
-      path: '/createitemPage',
-      builder: (context, state) => const CreateItemPage(),
+      name: NamedRoute.CREATE_PRODUCT_PAGE,
+      path: '/create_product_page',
+      builder: (context, state) => const CreateProducPage(),
     ),
     GoRoute(
       name: NamedRoute.ORDER_PAGE,
@@ -46,6 +47,11 @@ GoRouter router = GoRouter(
       name: NamedRoute.CREATE_RESTURANT,
       path: '/createResturant',
       builder: (context, state) => const CreateResturantPage(),
+    ),
+    GoRoute(
+      name: NamedRoute.NAV_BAR,
+      path: '/nav_bar',
+      builder: (context, state) => const NavBar(),
     ),
   ],
 );

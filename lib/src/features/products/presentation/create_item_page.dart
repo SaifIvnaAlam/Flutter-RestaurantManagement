@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../application/Item_cubit/item_cubit.dart';
 import '../domain/list_of_demo_items.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../application/Item_cubit/item_cubit.dart';
 
-class CreateItemPage extends StatelessWidget {
-  const CreateItemPage({super.key});
+
+class CreateProducPage extends StatelessWidget {
+  const CreateProducPage({super.key});
 
   @override
   Widget build(BuildContext context) {

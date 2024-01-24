@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurantmanagement/tests/app_tests/function_test_screen.dart';
+import 'package:restaurantmanagement/tests/app_tests/nav_bar_test.dart';
 
 class TestApp extends StatelessWidget {
   const TestApp({super.key});
@@ -7,7 +7,7 @@ class TestApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: FunctionTestsScreen(),
+      home: NavBar(),
     );
   }
 }
