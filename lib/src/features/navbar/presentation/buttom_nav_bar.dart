@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:restaurantmanagement/src/features/orders/presentation/order_page.dart';
-import 'package:restaurantmanagement/src/features/profile/presentation/profile_page.dart';
 import 'package:restaurantmanagement/src/features/dashboard/presentation/dashboard_page.dart';
+import 'package:restaurantmanagement/src/features/orders/presentation/order_page.dart';
 import 'package:restaurantmanagement/src/features/products/presentation/create_item_page.dart';
+import 'package:restaurantmanagement/src/features/profile/presentation/profile_page.dart';
 // ignore_for_file: unused_field
 
 class NavBar extends StatefulWidget {
@@ -14,6 +14,12 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int _selectedIndex = 0;
+  static const List<String> _appbarTitles = <String>[
+    'Dashboard',
+    'Create Item',
+    'Orders',
+    'Profile'
+  ];
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -33,7 +39,7 @@ class _NavBarState extends State<NavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: Text(_appbarTitles[_selectedIndex]),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
