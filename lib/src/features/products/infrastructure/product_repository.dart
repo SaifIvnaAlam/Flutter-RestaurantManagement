@@ -3,6 +3,7 @@ import '../domain/product_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../domain/interface/i_product_repository.dart';
 import 'package:restaurantmanagement/src/core/show_error.dart';
+import 'package:restaurantmanagement/src/constants/firebase_helpers/firebase_collections.dart';
 import 'package:restaurantmanagement/src/constants/firebase_helpers/firestore_helper_functions.dart';
 
 class ItemRepository implements IItemRepo {
@@ -17,13 +18,13 @@ class ItemRepository implements IItemRepo {
     Klog.logMessage("CreateProduct Pressed Repo");
 
     _helper.getCurrenUser();
-    CollectionReference resturantsCollection =
-        FirebaseFirestore.instance.collection('resturants');
+    CollectionReference resturantsCollection = FirebaseFirestore.instance
+        .collection(CollectionNames.RESTAURANT_COLLECTION);
 
     try {
       resturantsCollection
           .doc()
-          .collection("items")
+          .collection(CollectionNames.PRODUCTION_COLLECTION)
           .doc(item.id)
           .set(item.toMap());
       return true;

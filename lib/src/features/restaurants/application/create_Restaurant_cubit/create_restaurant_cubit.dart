@@ -23,6 +23,7 @@ class CreateRestaurantCubit extends Cubit<CreateRestaurantState> {
   Future<bool> createRestaurant(String name, File image) async {
     final _helper = await FirebaseHelperFunctions().getCurrenUser();
     final _restaurant = RestaurantsModel(
+      name: name,
       id: const Uuid().v4(),
       image: "Path",
       createAt: FieldValue.serverTimestamp().toString(),

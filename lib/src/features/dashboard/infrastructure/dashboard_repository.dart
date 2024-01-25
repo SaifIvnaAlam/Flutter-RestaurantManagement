@@ -1,8 +1,8 @@
-import 'package:restaurantmanagement/src/constants/firebase_helpers/firestore_helper_functions.dart';
-import 'package:restaurantmanagement/src/core/show_error.dart';
-import 'package:restaurantmanagement/src/features/restaurants/domain/entities/restaurant_model.dart';
-
 import '../domain/interface/i_dashboard_repository.dart';
+import 'package:restaurantmanagement/src/core/show_error.dart';
+import 'package:restaurantmanagement/src/constants/firebase_helpers/firestore_helper_functions.dart';
+import 'package:restaurantmanagement/src/features/restaurants/domain/entities/restaurant_model.dart';
+// ignore_for_file: no_leading_underscores_for_local_identifiers
 
 // ignore_for_file: prefer_final_fields
 

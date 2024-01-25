@@ -2,11 +2,12 @@ import 'dart:convert';
 
 class RestaurantsModel {
   String id;
-
+  String name;
   String image;
   String createAt;
   String admin;
   RestaurantsModel({
+    required this.name,
     required this.id,
     required this.image,
     required this.createAt,
@@ -15,6 +16,7 @@ class RestaurantsModel {
 
   factory RestaurantsModel.empty() {
     return RestaurantsModel(
+      name: '',
       id: '',
       image: '',
       createAt: '',
@@ -28,6 +30,7 @@ class RestaurantsModel {
     String? admin,
   }) {
     return RestaurantsModel(
+      name: name ?? this.name,
       id: id ?? this.id,
       image: image ?? this.image,
       createAt: createAt ?? this.createAt,
@@ -39,6 +42,7 @@ class RestaurantsModel {
     final result = <String, dynamic>{};
 
     result.addAll({'id': id});
+    result.addAll({'name': name});
     result.addAll({'image': image});
     result.addAll({'createAt': createAt});
     result.addAll({'admin': admin});
@@ -49,6 +53,7 @@ class RestaurantsModel {
   factory RestaurantsModel.fromMap(Map<String, dynamic> map) {
     return RestaurantsModel(
       id: map['id'] ?? '',
+      name: map['name'] ?? '',
       image: map['image'] ?? '',
       createAt: map['createAt'] ?? '',
       admin: map['admin'] ?? '',
@@ -62,7 +67,7 @@ class RestaurantsModel {
 
   @override
   String toString() {
-    return 'RestaurantsModel(id: $id, image: $image, createAt: $createAt, admin: $admin)';
+    return 'RestaurantsModel(id: $id, image: $image, createAt: $createAt, admin: $admin , name: $name)';
   }
 
   @override
@@ -71,6 +76,7 @@ class RestaurantsModel {
 
     return other is RestaurantsModel &&
         other.id == id &&
+        other.name == name &&
         other.image == image &&
         other.createAt == createAt &&
         other.admin == admin;
@@ -78,6 +84,10 @@ class RestaurantsModel {
 
   @override
   int get hashCode {
-    return id.hashCode ^ image.hashCode ^ createAt.hashCode ^ admin.hashCode;
+    return id.hashCode ^
+        image.hashCode ^
+        createAt.hashCode ^
+        admin.hashCode ^
+        name.hashCode;
   }
 }
