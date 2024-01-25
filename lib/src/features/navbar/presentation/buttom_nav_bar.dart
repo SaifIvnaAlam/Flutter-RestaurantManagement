@@ -44,34 +44,55 @@ class _NavBarState extends State<NavBar> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 10,
-        backgroundColor: Colors.black,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Dashboard',
-            backgroundColor: Colors.grey,
+      bottomNavigationBar: Container(
+        height: 80,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Product',
-            // backgroundColor: Colors.purple,
+        ),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: 'Orders',
-            // backgroundColor: Colors.pink,
+          child: BottomNavigationBar(
+            elevation: 10,
+            backgroundColor: Colors.black,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.dashboard),
+                label: 'Dashboard',
+                backgroundColor: Colors.black,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_cart),
+                label: 'Product',
+                backgroundColor: Colors.black,
+
+                // backgroundColor: Colors.purple,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.list_alt),
+                label: 'Orders',
+                backgroundColor: Colors.black,
+
+                // backgroundColor: Colors.pink,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+                backgroundColor: Colors.black,
+
+                // backgroundColor: Colors.pink,
+              ),
+            ],
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.amber[800],
+            onTap: _onItemTapped,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-            // backgroundColor: Colors.pink,
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
+        ),
       ),
     );
   }
