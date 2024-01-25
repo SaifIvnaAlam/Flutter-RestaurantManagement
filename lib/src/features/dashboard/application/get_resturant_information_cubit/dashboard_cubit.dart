@@ -13,7 +13,7 @@ class DashboardCubit extends Cubit<DashboardState> {
 
   Future<void> getResturantInformation() async {
     _repo
-        .getUsersResturant()
+        .getUsersRestaurant()
         .then((value) => emit(const DashboardState.loaded()))
         .catchError((e) {
       emit(

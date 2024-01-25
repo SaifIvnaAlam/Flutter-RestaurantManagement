@@ -6,12 +6,14 @@ class UserModel {
   final String displayName;
   final String email;
   final String photoURL;
+  final String? restaurant;
   UserModel({
     required this.id,
     required this.uid,
     required this.displayName,
     required this.email,
     required this.photoURL,
+    this.restaurant,
   });
 
   UserModel copyWith({
@@ -20,6 +22,7 @@ class UserModel {
     String? displayName,
     String? email,
     String? photoURL,
+    String? restaurant,
   }) {
     return UserModel(
       id: id ?? this.id,
@@ -27,6 +30,7 @@ class UserModel {
       displayName: displayName ?? this.displayName,
       email: email ?? this.email,
       photoURL: photoURL ?? this.photoURL,
+      restaurant: restaurant ?? this.restaurant,
     );
   }
 
@@ -38,6 +42,9 @@ class UserModel {
     result.addAll({'displayName': displayName});
     result.addAll({'email': email});
     result.addAll({'photoURL': photoURL});
+    if (restaurant != null) {
+      result.addAll({'restaurant': restaurant});
+    }
 
     return result;
   }
@@ -49,6 +56,7 @@ class UserModel {
       displayName: map['displayName'] ?? '',
       email: map['email'] ?? '',
       photoURL: map['photoURL'] ?? '',
+      restaurant: map['restaurant'],
     );
   }
 
@@ -59,7 +67,7 @@ class UserModel {
 
   @override
   String toString() {
-    return 'UserModel(id: $id, uid: $uid, displayName: $displayName, email: $email, photoURL: $photoURL)';
+    return 'UserModel(id: $id, uid: $uid, displayName: $displayName, email: $email, photoURL: $photoURL, restaurant: $restaurant)';
   }
 
   @override
@@ -71,7 +79,8 @@ class UserModel {
         other.uid == uid &&
         other.displayName == displayName &&
         other.email == email &&
-        other.photoURL == photoURL;
+        other.photoURL == photoURL &&
+        other.restaurant == restaurant;
   }
 
   @override
@@ -80,6 +89,7 @@ class UserModel {
         uid.hashCode ^
         displayName.hashCode ^
         email.hashCode ^
-        photoURL.hashCode;
+        photoURL.hashCode ^
+        restaurant.hashCode;
   }
 }

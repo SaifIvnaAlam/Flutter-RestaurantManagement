@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:restaurantmanagement/src/core/show_error.dart';
 import 'package:restaurantmanagement/src/auth/domain/user_model.dart';
+import '../../features/restaurants/domain/entities/restaurant_model.dart';
 import 'package:restaurantmanagement/src/constants/firebase_helpers/firebase_collections.dart';
 
 // ignore_for_file: no_leading_underscores_for_local_identifiers
@@ -45,6 +46,12 @@ class FirebaseHelperFunctions {
     return result;
   }
 
+  Future<CollectionReference<Map<String, dynamic>>>
+      restaurantCollectionHelper() async {
+    var result = _fireStore.collection(CollectionNames.RESTAURANT_COLLECTION);
+    return result;
+  }
+
   Future<void> orderCollectionHelper() async {}
   Future<void> productCollectionHelper() async {}
 
@@ -62,6 +69,26 @@ class FirebaseHelperFunctions {
     } catch (e) {
       Klog.logMessage("Error Updating User Doc:  $e");
       return false;
+    }
+  }
+
+//Doc Helpers
+  Future<RestaurantsModel> getUsersRestaurant(
+      {required String restaurantId}) async {
+    Klog.logMessage("Getting Restaurant");
+    Klog.logMessage("Getting Restaurant: $restaurantId");
+    var _restaurantCollection = await restaurantCollectionHelper();
+
+    try {
+      var result = await _restaurantCollection
+          .doc(restaurantId)
+          .get()
+          .then((value) => RestaurantsModel.fromMap(value.data()!));
+      Klog.logMap(result.toMap());
+      return result;
+    } catch (e) {
+      Klog.logMessage("Error Getting Restaurant: $e");
+      return RestaurantsModel.empty();
     }
   }
 

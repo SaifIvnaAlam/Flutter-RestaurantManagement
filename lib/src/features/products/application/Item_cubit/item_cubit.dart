@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:uuid/uuid.dart';
-import '../../domain/product_model.dart';
-import '../../domain/interface/i_product_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:uuid/uuid.dart';
 
+import '../../domain/interface/i_product_repository.dart';
+import '../../domain/product_model.dart';
 
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
@@ -23,7 +23,7 @@ class ItemCubit extends Cubit<ItemState> {
       image: "",
     );
 
-    bool isUploaded = await _iItemRepo.addItem(_item);
+    bool isUploaded = await _iItemRepo.createProduct(_item);
 
     if (isUploaded) {
       emit(ItemState.uploaded(isUploaded));
