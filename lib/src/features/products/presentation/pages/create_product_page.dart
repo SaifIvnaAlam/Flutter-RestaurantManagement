@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../application/Item_cubit/item_cubit.dart';
 
 class CreateProducPage extends StatelessWidget {
   const CreateProducPage({super.key});
@@ -13,39 +11,38 @@ class CreateProducPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.read<ItemCubit>().createNewItem("Test", 12.3);
+          buttomModalSheet(context);
+          // context.read<ItemCubit>().createNewItem("Test", 12.3);
         },
         child: const Icon(Icons.add),
       ),
     );
   }
+}
 
-  Future<void> buttomModalSheet(BuildContext context) {
-    return showModalBottomSheet<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return const SizedBox(
-          height: 400,
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  TextField(
-                    decoration:
-                        InputDecoration(hintText: "Name of the Product"),
-                  ),
-                  TextField(
-                    decoration:
-                        InputDecoration(hintText: "Price Of the Product"),
-                  ),
-                ],
-              ),
+Future<void> buttomModalSheet(BuildContext context) {
+  return showModalBottomSheet<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return const SizedBox(
+        height: 400,
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TextField(
+                  decoration: InputDecoration(hintText: "Name of the Product"),
+                ),
+                TextField(
+                  decoration: InputDecoration(hintText: "Price Of the Product"),
+                ),
+              ],
             ),
           ),
-        );
-      },
-    );
-  }
+        ),
+      );
+    },
+  );
 }
