@@ -1,14 +1,13 @@
 import 'package:go_router/go_router.dart';
 import 'package:restaurantmanagement/src/core/splash.dart';
 import 'package:restaurantmanagement/src/auth/presentation/sign_in.dart';
-import '../features/products/presentation/pages/create_product_page.dart';
 import 'package:restaurantmanagement/src/routes/go_router_constants.dart';
+import '../features/products/presentation/pages/create_product_page.dart';
 import '../features/restaurants/presentation/create_restaurant_page.dart';
-import 'package:restaurantmanagement/tests/app_tests/discord_nav_bar.dart';
+import 'package:restaurantmanagement/src/features/navbar/presentation/side_bar.dart';
 import 'package:restaurantmanagement/src/features/orders/presentation/order_page.dart';
 import 'package:restaurantmanagement/src/features/home/presentation/page/home_page.dart';
 import 'package:restaurantmanagement/src/features/navbar/presentation/buttom_nav_bar.dart';
-import 'package:restaurantmanagement/src/features/navbar/presentation/discord_nav_bar.dart';
 import 'package:restaurantmanagement/src/features/dashboard/presentation/dashboard_page.dart';
 
 GoRouter router = GoRouter(
@@ -57,7 +56,7 @@ GoRouter router = GoRouter(
     GoRoute(
       name: NamedRoute.DISCORD_SIDEBAR,
       path: '/discord_sidebar',
-      builder: (context, state) => const DiscordSidebar(),
+      builder: (context, state) => const Sidebar(),
     ),
   ],
 );
