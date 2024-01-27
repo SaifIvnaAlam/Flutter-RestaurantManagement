@@ -6,7 +6,7 @@ class KFontStyle {
 
   static const h1Style = const TextStyle(
     fontSize: 60,
-    color: Colors.black,
+    color: Colors.white,
     fontFamily: 'Poppins',
     height: 1.4,
     fontWeight: FontWeight.w900,
@@ -14,7 +14,7 @@ class KFontStyle {
 
   static const h2Style = const TextStyle(
     fontSize: 22,
-    color: Colors.black,
+    color: Colors.white,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
   );
@@ -23,21 +23,21 @@ class KFontStyle {
     fontFamily: 'Poppins',
     fontSize: 20,
     fontWeight: FontWeight.w500,
-    color: Colors.black,
+    color: Colors.white,
   );
 
   static const h4Style = const TextStyle(
     fontFamily: 'Poppins',
     fontSize: 15,
     fontWeight: FontWeight.bold,
-    color: Colors.black,
+    color: Colors.white,
   );
 
   static const h5Style = const TextStyle(
     fontFamily: 'Poppins',
     fontSize: 20,
     fontWeight: FontWeight.w300,
-    color: Colors.black,
+    color: Colors.white,
   );
 
   static final body1 = TextStyle(

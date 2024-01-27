@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurantmanagement/src/core/show_error.dart';
+import 'package:restaurantmanagement/src/constants/utils/app_spacing.dart';
 import 'package:restaurantmanagement/src/features/dashboard/presentation/dashboard_page.dart';
 
 class DiscordSidebar extends StatefulWidget {
@@ -28,7 +29,7 @@ class _DiscordSidebarState extends State<DiscordSidebar> {
             visible: isNavbarOpen,
             child: Container(
               width: 100, // Adjust the width as needed
-              color: Colors.grey,
+              color: const Color.fromARGB(255, 21, 21, 21),
               child: SafeArea(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -66,6 +67,7 @@ class _DiscordSidebarState extends State<DiscordSidebar> {
                     ),
                     GestureDetector(
                       onTap: () {
+                        _dialogBuilder(context);
                         // Add button tap action
                         Klog.logMessage("Add button pressed");
                       },
@@ -79,6 +81,7 @@ class _DiscordSidebarState extends State<DiscordSidebar> {
                         child: const Icon(Icons.add),
                       ),
                     ),
+                    verticalSpacing12
                   ],
                 ),
               ),
@@ -99,6 +102,56 @@ class _DiscordSidebarState extends State<DiscordSidebar> {
       ),
     );
   }
+}
+
+Future<void> _dialogBuilder(BuildContext context) {
+  return showDialog<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Create a system'),
+        content: SizedBox(
+          height: 200,
+          child: Column(
+            children: [
+              Container(
+                height: 60,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white, width: 2),
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Center(
+                  child: Text('Restaurant'),
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: Theme.of(context).textTheme.labelLarge,
+            ),
+            child: const Text('Disable'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: Theme.of(context).textTheme.labelLarge,
+            ),
+            child: const Text('Enable'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }
 
 class Page1 extends StatelessWidget {
