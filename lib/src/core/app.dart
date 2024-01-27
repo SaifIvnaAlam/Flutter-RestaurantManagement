@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../features/products/application/Item_cubit/item_cubit.dart';
 import '../features/products/infrastructure/product_repository.dart';
 import 'package:restaurantmanagement/src/routes/go_router_config.dart';
 import '../features/profile/application/profile_cubit/profile_cubit.dart';
 import 'package:restaurantmanagement/src/auth/infarstructure/auth_facade.dart';
+import '../features/products/application/create_product_cubit/item_cubit.dart';
 import 'package:restaurantmanagement/src/auth/application/auth_cubit/auth_cubit.dart';
 import 'package:restaurantmanagement/src/features/home/infrastructure/home_repository.dart';
 import 'package:restaurantmanagement/src/features/dashboard/infrastructure/dashboard_repository.dart';
@@ -25,7 +25,7 @@ class App extends StatelessWidget {
           create: (context) => AuthCubit(AuthFacade()),
         ),
         BlocProvider(
-          create: (context) => ItemCubit(ItemRepository()),
+          create: (context) => CreateProductCubit(ItemRepository()),
         ),
         BlocProvider(
           create: (context) => RestaurantOwnerCubit(HomeRepository()),
