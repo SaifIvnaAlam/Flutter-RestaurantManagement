@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:restaurantmanagement/src/core/show_error.dart';
+import 'package:restaurantmanagement/src/features/dashboard/presentation/dashboard_page.dart';
 
-class DiscordNavbar extends StatefulWidget {
-  const DiscordNavbar({Key? key}) : super(key: key);
+class DiscordSidebar extends StatefulWidget {
+  const DiscordSidebar({Key? key}) : super(key: key);
 
   @override
-  _DiscordNavbarState createState() => _DiscordNavbarState();
+  _DiscordSidebarState createState() => _DiscordSidebarState();
 }
 
-class _DiscordNavbarState extends State<DiscordNavbar> {
+class _DiscordSidebarState extends State<DiscordSidebar> {
   int _selectedIndex = 0;
   bool isNavbarOpen = true;
 
   List<Widget> list = [
-    Page1(),
+    DashBoardPage(),
     Page2(),
     Page3(),
   ];

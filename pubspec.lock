@@ -781,6 +781,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  overlapping_panels:
+    dependency: "direct main"
+    description:
+      name: overlapping_panels
+      sha256: "208c4780b040fd1ccd2dc959a67b609a99ac1605c06acf9a4644d595eaa98d90"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   package_config:
     dependency: transitive
     description:

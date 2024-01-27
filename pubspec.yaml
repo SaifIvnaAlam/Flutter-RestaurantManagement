@@ -35,6 +35,7 @@ dependencies:
   ansicolor: ^2.0.2
   image_picker: ^1.0.7
   bloc: ^8.1.2
+  overlapping_panels: ^0.0.3
 
 dev_dependencies:
   flutter_test:

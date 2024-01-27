@@ -1,7 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
 import '../routes/go_router_constants.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -12,7 +13,7 @@ class SplashScreen extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           Future.microtask(() {
             if (snapshot.data != null) {
-              context.pushReplacement(NamedRoute.NAV_BAR);
+              context.pushReplacement(NamedRoute.DISCORD_SIDEBAR);
             } else {
               context.pushReplacement(NamedRoute.SIGNIN_PAGE);
             }

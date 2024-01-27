@@ -9,4 +9,5 @@ class NamedRoute {
   static const CREATE_PRODUCT_PAGE = '/create_product_page';
   static const CREATE_RESTURANT = '/createResturant';
   static const NAV_BAR = '/nav_bar';
+  static const DISCORD_SIDEBAR = '/discord_sidebar';
 }
