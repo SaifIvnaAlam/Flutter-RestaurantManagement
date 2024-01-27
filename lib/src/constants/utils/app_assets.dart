@@ -1,5 +1,7 @@
 class AppAssets {
   const AppAssets._();
+
+  static const geist = 'geist';
 //Svg
   // static const googleIcon = 'assets/google.svg';
   // static const catAnimation = 'assets/cat_animation.json';

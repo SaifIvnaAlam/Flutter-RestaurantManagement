@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:restaurantmanagement/src/auth/application/auth_cubit/auth_cubit.dart';
 import 'package:restaurantmanagement/src/auth/infarstructure/auth_facade.dart';
 import 'package:restaurantmanagement/src/features/dashboard/application/get_resturant_information_cubit/dashboard_cubit.dart';
@@ -44,19 +43,39 @@ class App extends StatelessWidget {
         theme: ThemeData(
           platform: TargetPlatform.android,
           colorScheme: ColorScheme.fromSwatch().copyWith(
-            secondary: Colors.black,
+            primaryContainer: Colors.white,
+            primary: Colors.white,
+            brightness: Brightness.light,
+            background: Colors.black,
           ),
-          textTheme: TextTheme(
-            bodyText1: TextStyle(
-                color: Colors.white), // Set the default text color to white
-            bodyText2: TextStyle(
-                color:
-                    Colors.white), // Optional: Set another text style if needed
-            // Add more styles as needed
+          textTheme: const TextTheme(
+            titleMedium: TextStyle(
+              fontFamily: 'geist',
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              fontStyle: FontStyle.normal,
+              letterSpacing: 0,
+            ),
+            bodyMedium: TextStyle(
+              fontFamily: 'geist',
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              fontStyle: FontStyle.normal,
+              letterSpacing: 0,
+            ),
+            bodySmall: TextStyle(
+              fontFamily: 'geist',
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              fontStyle: FontStyle.normal,
+              letterSpacing: 0,
+            ),
           ),
           canvasColor: Colors.black,
-          primarySwatch: Colors.lime,
-          fontFamily: GoogleFonts.roboto().fontFamily,
+          fontFamily: 'geist',
         ),
         routerConfig: router,
       ),

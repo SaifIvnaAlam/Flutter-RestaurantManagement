@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:restaurantmanagement/src/constants/utils/app_assets.dart';
 
 class KFontStyle {
   // KFontStyle._();
@@ -34,20 +34,20 @@ class KFontStyle {
   );
 
   static const h5Style = const TextStyle(
-    fontFamily: 'Poppins',
+    fontFamily: AppAssets.geist,
     fontSize: 20,
     fontWeight: FontWeight.w300,
     color: Colors.white,
   );
 
   static final body1 = TextStyle(
-    fontFamily: GoogleFonts.montserrat().fontFamily,
+    fontFamily: AppAssets.geist,
     fontSize: 18,
     fontWeight: FontWeight.w500,
     color: Colors.white,
   );
   static final buttonBold = TextStyle(
-    fontFamily: GoogleFonts.montserrat().fontFamily,
+    fontFamily: AppAssets.geist,
     fontSize: 18,
     fontWeight: FontWeight.bold,
     color: Colors.white,

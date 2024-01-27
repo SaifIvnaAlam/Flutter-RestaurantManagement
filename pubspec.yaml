@@ -47,5 +47,10 @@ dev_dependencies:
   json_serializable: ^6.7.1
   injectable_generator: ^2.4.1
 
+fonts:
+  - family: "geist"
+    fonts:
+      - asset: assets/fonts/Geist.ttf
+      # - asset: assets/fonts/GeustMono.ttf
 flutter:
   uses-material-design: true
