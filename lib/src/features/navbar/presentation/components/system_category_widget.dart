@@ -27,10 +27,9 @@ class SystemCategoryWidget extends StatelessWidget {
                 child: Text(
                   title,
                   style: KFontStyle.buttonBold.copyWith(
-                      color: Colors.black,
-                      letterSpacing: 1,
+                      color: const Color.fromARGB(255, 42, 39, 39),
                       fontSize: 25,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.w500),
                 ),
               ),
               const Icon(Icons.arrow_forward_ios)

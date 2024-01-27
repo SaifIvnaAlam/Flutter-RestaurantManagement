@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../auth/domain/user_model.dart';
+
 // ignore_for_file: must_be_immutable
 
 class Profile extends StatelessWidget {
@@ -8,19 +9,21 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          height: 50,
-          width: 50,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            image: DecorationImage(image: NetworkImage(data.photoURL)),
+    return Scaffold(
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(image: NetworkImage(data.photoURL)),
+            ),
           ),
-        ),
-        Text(data.email),
-      ],
+          Text(data.email),
+        ],
+      ),
     );
   }
 }

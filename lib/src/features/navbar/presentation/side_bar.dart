@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'components/system_category_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:restaurantmanagement/src/core/show_error.dart';
+import 'package:restaurantmanagement/src/routes/go_router_constants.dart';
 import 'package:restaurantmanagement/src/constants/utils/app_spacing.dart';
 import 'package:restaurantmanagement/src/constants/utils/app_font_style.dart';
 import 'package:restaurantmanagement/src/features/dashboard/presentation/dashboard_page.dart';
@@ -89,18 +91,18 @@ class _SidebarState extends State<Sidebar> {
                     verticalSpacing12,
                     GestureDetector(
                       onTap: () {
-                        _dialogBuilder(context);
-                        // Add button tap action
-                        Klog.logMessage("Add button pressed");
+                        context.push(NamedRoute.PROFILE_PAGE);
                       },
                       child: Container(
                         height: 60,
                         width: 60,
                         decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(100),
-                            image: DecorationImage(
-                                image: NetworkImage(_user.photoURL ?? ""))),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(100),
+                          image: DecorationImage(
+                            image: NetworkImage(_user.photoURL ?? "Profile"),
+                          ),
+                        ),
                       ),
                     ),
                     verticalSpacing12

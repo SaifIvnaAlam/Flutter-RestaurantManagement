@@ -7,8 +7,10 @@ import '../features/restaurants/presentation/create_restaurant_page.dart';
 import 'package:restaurantmanagement/src/features/navbar/presentation/side_bar.dart';
 import 'package:restaurantmanagement/src/features/orders/presentation/order_page.dart';
 import 'package:restaurantmanagement/src/features/home/presentation/page/home_page.dart';
+import 'package:restaurantmanagement/src/features/profile/presentation/profile_page.dart';
 import 'package:restaurantmanagement/src/features/navbar/presentation/buttom_nav_bar.dart';
 import 'package:restaurantmanagement/src/features/dashboard/presentation/dashboard_page.dart';
+import 'package:restaurantmanagement/src/features/profile/presentation/components/user_profile_widget.dart';
 
 GoRouter router = GoRouter(
   initialLocation: '/splashPage',
@@ -57,6 +59,11 @@ GoRouter router = GoRouter(
       name: NamedRoute.DISCORD_SIDEBAR,
       path: '/discord_sidebar',
       builder: (context, state) => const Sidebar(),
+    ),
+    GoRoute(
+      name: NamedRoute.PROFILE_PAGE,
+      path: '/profile_page',
+      builder: (context, state) => ProfilePage(),
     ),
   ],
 );

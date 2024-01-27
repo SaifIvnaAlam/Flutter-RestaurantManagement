@@ -10,4 +10,5 @@ class NamedRoute {
   static const CREATE_RESTURANT = '/createResturant';
   static const NAV_BAR = '/nav_bar';
   static const DISCORD_SIDEBAR = '/discord_sidebar';
+  static const PROFILE_PAGE = '/profile_page';
 }
