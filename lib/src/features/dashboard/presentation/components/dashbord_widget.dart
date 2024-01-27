@@ -52,13 +52,13 @@ class DashboardWidget extends StatelessWidget {
             height: 200,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Colors.blueGrey,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: const Center(
+            child: Center(
               child: Text(
                 "Stats",
-                style: KFontStyle.h3Style,
+                style: KFontStyle.h3Style.copyWith(color: Colors.black),
               ),
             ),
           )
