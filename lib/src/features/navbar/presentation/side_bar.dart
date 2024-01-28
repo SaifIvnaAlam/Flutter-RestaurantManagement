@@ -145,7 +145,11 @@ Future<void> _dialogBuilder(BuildContext context) {
             child: Column(
               children: [
                 SystemCategoryWidget(onTap: () {}, title: 'Inventory'),
-                SystemCategoryWidget(onTap: () {}, title: 'Restaurant'),
+                SystemCategoryWidget(
+                    onTap: () {
+                      context.pushNamed(NamedRoute.CREATE_RESTURANT);
+                    },
+                    title: 'Restaurant'),
                 SystemCategoryWidget(onTap: () {}, title: 'Social Media Shop'),
               ],
             ),
